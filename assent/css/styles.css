@@ -1,5 +1,5 @@
 body{
-    background-color:rgb(227, 234, 240);
+ 
 }
 .tipo-fuente{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -8,6 +8,7 @@ body{
 
 .centrar{
     text-align:center ;
+    justify-content: center;
 }
  .container {
         display: grid;
@@ -42,15 +43,52 @@ body{
         text-decoration: none; 
         color: inherit; 
     }
-.fondo-imagen{
-    filter: drop-shadow(1px 1px 10px rgb(2, 1, 0));
+
+.container-carousel {
+    text-align: center; /* Centra el contenido horizontalmente */
+    max-width: 100%; /* Ajusta el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
-.chico{
-   
-        width:20%; /* Ancho del carrusel */
-        
-     
-     }
-  
-   
+
+.chico {
+    max-width: 100%; /* Hace que el carrusel ocupe el ancho máximo posible */
+    width: 100%; /* Hace que el carrusel ocupe el ancho máximo posible */
+}
+
+
+
+
+     /* styles nav bar */
+  nav{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-weight: bold;
+  }
+  h1{
+    color: rgb(0, 0, 0);
+    font-size: 550%;
+    font-family:serif
+    
+  }
+  ul li{
+    display:inline-block;
+    padding : 0px 20px
+  }
+  a{
+    color: rgb(0, 0, 0);
+    text-decoration:none ;
+  }
+  a:hover{
+ color: rgb(70, 131, 107);
+  }
+  .barra-negra{
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+
     
