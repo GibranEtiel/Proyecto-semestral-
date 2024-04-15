@@ -97,4 +97,21 @@ body{
     text-align: center;
   }
 
-    
+    /* zapatillas vans */
+  .precio {
+    font-size: 30px; /* Ajusta el tamaño del precio según lo necesites */
+}
+
+  .talla-button {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    margin: 5px;
+}
+.talla-button.active {
+    background-color: #000000;
+    color: #ffffff;
+}
+.tamano-zapa{
+  width: 100%;
+}
