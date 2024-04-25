@@ -3,3 +3,5 @@ document.getElementById('payment-form').addEventListener('submit', function(even
     // Redirecciona a la página de pago exitoso
     window.location.href = 'pago-exitoso.html';
 });
+
+
