@@ -12,17 +12,15 @@
     
     <div class="formulario">
         <h1>Recuperar Contraseña</h1>
-        <form method="post">
-            <div class="email mb-3">
-                <label>Correo Electronico:</label>
-                <input type="email" placeholder=" Correo electronico">
-                
-            </div>
-            <a href="./Login.html">
-                <input class="margin-bottom" type="button" value="Enviar cambio de contraseña">
-            </a>
-        </form>
+    <form id="password-recovery-form">
+        <div class="email mb-3">
+            <label for="cambiarcorreo">Correo Electrónico:</label>
+            <input id="cambiarcorreo" type="email" placeholder="Ingrese su correo" required>
+        </div>
+        <input id="Correobutton" type="button" value="Cambiar contraseña">
+    </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="./assent/js/login.js"></script>
 </body>
 </html>
