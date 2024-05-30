@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zapatillas Carrusel</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    .card {
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner" id="carousel-inner"></div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const url = 'https://my.api.mockaroo.com/users.json?key=c1675480';
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        const carouselInner = document.getElementById('carousel-inner');
+        const topZapatillas = data.slice(0, 3); // Obtener las 3 primeras zapatillas más vendidas
+
+        topZapatillas.forEach((zapatilla, index) => {
+            const isActive = index === 0 ? 'active' : '';
+            const item = `
+                <div class="carousel-item ${isActive}">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <img src="${zapatilla.imagen}" class="card-img-top" alt="${zapatilla.nombre}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${zapatilla.nombre}</h5>
+                                    <p class="card-text"><b>Descripcion:</b> ${zapatilla.descripcion}</p>
+                                    <p class="card-text">Tipo: ${zapatilla.tipo}</p>
+                                    <p class="card-text"><b>${zapatilla.precio}</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            carouselInner.innerHTML += item;
+        });
+    })
+    .catch(error => console.log(error));
+});
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
