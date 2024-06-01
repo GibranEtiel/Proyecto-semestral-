@@ -1,43 +1,40 @@
+document.getElementById('loginButton').addEventListener('click', () => {
+    const correo = document.getElementById('correo').value;
+    const contraseña = document.getElementById('contraseña').value;
 
-const correo = document.getElementById("correo");
-const contraseña = document.getElementById("contraseña");
-const loginButton = document.getElementById("loginButton");
-    
+    // Obtener usuarios registrados del almacenamiento local
+    const users = JSON.parse(localStorage.getItem('users')) || [];
 
-loginButton.addEventListener("click", function() {
-    const email = correo.value;
-    const password = contraseña.value;
+    // Verificar si existe un usuario con el correo electrónico y la contraseña proporcionados localmente
+    const userLocal = users.find(user => user.email === correo && user.password === contraseña);
+    if (userLocal) {
+        alert('Inicio de sesión exitoso. Redirigiendo...');
+        // Redirige al usuario al archivo index.html o a donde sea que desees
+        window.location.href = './index.html';
+    } else {
+        // Si no se encuentra en el almacenamiento local, realiza la solicitud a la API
+        const url = `https://my.api.mockaroo.com/users.json?key=d32f68e0`;
 
-      
-    if (email.trim() === "" || password.trim() === "") {
-        alert("Por favor, complete todos los campos.");
-        return;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const usuarios = data;
+                const usuarioValido = usuarios.find(usuario => usuario.email === correo);
+                if (usuarioValido) {
+                    if (usuarioValido.password === contraseña) {
+                        alert('Inicio de sesión exitoso. Redirigiendo...');
+                        // Redirige al usuario al archivo index.html
+                        window.location.href = './index.html';
+                    } else {
+                        alert('Contraseña incorrecta. Inténtalo de nuevo.');
+                    }
+                } else {
+                    alert('Correo inválido. Inténtalo de nuevo.');
+                }
+            })
+            .catch(error => {
+                console.error('Error al obtener usuarios:', error);
+                alert('Ocurrió un error. Por favor, inténtalo de nuevo más tarde.');
+            });
     }
-      
-
-    window.location.href = "./index.html";
 });
-
-
-
-
-const cambiarCorreo = document.getElementById("cambiarcorreo");
-const cambiarCorreoBoton = document.getElementById("Correobutton");
-
-cambiarCorreoBoton.addEventListener("click", function() {
-    const correo = cambiarCorreo.value;
-
-       
-    if (!correo.trim()) {
-        alert("Por favor, ingrese su correo electrónico.");
-        return;
-    }
-
-      
-    console.log("Correo Electrónico:", correo);
-    window.location.href = "./Login.html";
-
-       
-});
-
-

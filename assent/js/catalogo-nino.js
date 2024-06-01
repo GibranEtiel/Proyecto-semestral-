@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const url = 'https://my.api.mockaroo.com/users.json?key=e4883c10';
+    const url = 'https://my.api.mockaroo.com/users.json?key=eaf6dc10';
 
     fetch(url)
     .then(response => response.json())
     .then(data => {
         const zapatillasContainer = document.getElementById('zapatillas-container');
 
-        // Mostrar zapatillas tipo "hombre" en dos filas de cuatro columnas
-        const zapatillasHombre = data.filter(zapatilla => zapatilla.tipo === 'niño');//gggggggggggggggggggggggggggggggggggggggggggggg
+        
+        const zapatillasHombre = data.filter(zapatilla => zapatilla.tipo === 'niño');
         for (let i = 0; i < zapatillasHombre.length; i += 4) {
             const zapatillasGroup = zapatillasHombre.slice(i, i + 4);
 
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             zapatillasContainer.appendChild(row);
         }
 
-        // Manejar evento de clic en una tarjeta para mostrar detalles
+        
         document.querySelectorAll('.card').forEach(card => {
             card.addEventListener('click', () => {
                 const zapatillaId = card.getAttribute('data-zapatilla-id');
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(error => console.log(error));
 
-    // Función para mostrar los detalles de la zapatilla en el modal
+   
     function mostrarDetallesZapatilla(zapatilla) {
         const modalTitle = document.getElementById('zapatillaModalLabel');
         const modalBody = document.getElementById('zapatillaDetalle');

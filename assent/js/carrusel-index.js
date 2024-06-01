@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const url = 'https://my.api.mockaroo.com/users.json?key=e4883c10';
+    const url = 'https://my.api.mockaroo.com/users.json?key=eaf6dc10';
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
             const carouselInner = document.getElementById('carousel-inner-custom');
 
-            // Agrupar zapatillas en grupos de tres
+            
             for (let i = 0; i < data.length; i += 3) {
                 const isActive = i === 0 ? 'active' : '';
                 const zapatillasGroup = data.slice(i, i + 3);
@@ -32,14 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 carouselInner.innerHTML += item;
             }
 
-            // Manejar evento de clic en una tarjeta para mostrar detalles
+            
             document.querySelectorAll('.card').forEach(card => {
                 card.addEventListener('click', () => {
                     const zapatillaId = card.getAttribute('data-zapatilla-id');
                     const zapatilla = data.find(z => z.id == zapatillaId);
                     mostrarDetallesZapatilla(zapatilla);
+            
                 });
             });
+
+            
         })
         .catch(error => console.error('Error al obtener datos:', error));
 });
@@ -56,3 +59,4 @@ function mostrarDetallesZapatilla(zapatilla) {
     const zapatillaModalCustom = new bootstrap.Modal(document.getElementById('zapatillaModalCustom'));
     zapatillaModalCustom.show();
 }
+
