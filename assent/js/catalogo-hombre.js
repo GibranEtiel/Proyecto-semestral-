@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const comprarBtn = document.createElement('a');
                 comprarBtn.classList.add('btn', 'btn-primary');
                 comprarBtn.href = 'comprar.html';
-                comprarBtn.textContent = 'Comprar';
+                comprarBtn.textContent = 'Agregar al Carro';
 
                 cardBody.appendChild(cardTitle);
                 cardBody.appendChild(cardText);

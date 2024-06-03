@@ -1,122 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zapatillas San Antonio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assent/css/styles.css">
-    <link rel="icon" href="./assent/img/logo pagina.png">
-    <link rel="stylesheet" href="./assent/css/styles-folder.css">
+    <title>Zapatillas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="./assent/img/logo pagina.png" alt="Logo" style="height: 100px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto"> <!-- Alineación al máximo a la derecha -->
-                    <li class="nav-item">
-                        <a class="nav-link active centrar" aria-current="page" href="index.html">INICIO</a>
-                    </li>
-            
-                    <li class="nav-item">
-                        <a class="nav-link centrar" href="catalogo.html">HOMBRE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link centrar" href="catalogo-mujer.html">MUJER</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link centrar" href="catalogo-nino.html">NIÑOS</a>
-                    
-            </div>
-        </div>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">Tienda de Zapatillas</a>
+        <button class="btn btn-outline-success my-2 my-sm-0" id="carritoIcono" data-toggle="modal" data-target="#carritoModal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                <path d="M0 1a1 1 0 0 1 1-1h1.48a1 1 0 0 1 .977.783L3.89 3H14a1 1 0 0 1 .979 1.2l-1.482 7.36a2 2 0 0 1-1.97 1.44H4.361l-.2-1H12.8a1 1 0 0 0 .98-1.2L14.5 4H3.78l-.8 4H1a1 1 0 0 1-1-1V1zM4.334 11l.8-4H13.5l1.1 5.44a1 1 0 0 1-.98 1.2H4.78l-.445-2h-.003zM4 12a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm8-1a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+            </svg>
+            <span class="badge badge-pill badge-danger" id="carritoCantidad">0</span>
+        </button>
     </nav>
+    
+    <div class="container mt-5" id="zapatillas-container"></div>
 
-
-
-<div class="barra-negra">
-    <p><div class="barra">
-        <div class="clear">
-          <p><strong>👟 CLICK &amp; COLLECT</strong>! Compra online y <strong>retira en tienda gratis</strong>, desde un día hábil! </p>
-        </div>
-      </div></p>
-
-</div>
-
-<div class="container mt-5">
-    <div class="row" id="zapatillas-container"></div>
-</div>
-
-<!-- Modal para mostrar detalles de la zapatilla -->
-<div class="modal fade" id="zapatillaModal" tabindex="-1" aria-labelledby="zapatillaModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="zapatillaModalLabel">Detalles de la Zapatilla</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body" id="zapatillaDetalle">
-                <!-- Aquí se mostrarán los detalles de la zapatilla -->
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Footer-->
-<footer class="footer">
-        
-    <div class="conteiner-footer">
-        
-        <div class="footer-row">
-            <div class="footer-links">
-                <h4>SERVICIO Y SOPORTE</h4>
-                <li><a href="./contactos.html">Preguntas frecuentes</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
-                <li><a href="#">Políticas de Devolución</a></li>
-                <li><a href="#">Envíos</a></li>
-                <li><a href="./contactos.html">Tiendas</a></li>
-            </div>
-            <div class="footer-links">
-                <h4>CATEGORIAS</h4>
-                <li><a href="catalogo-nino.html">Niño</a></li>
-                <li><a href="catalogo.html">Hombre</a></li>
-                <li><a href="catalogo-mujer.html">Mujer</a></li>
-            </div>
-          
-            
-            <div class="footer-links">
-                <h4>INFORMACIÓN DE LA EMPRESA</h4>
-                <li><a href="./contactos.html">Acerca de Zapatillas san Antonio</a></li>
-                <li><a href="#">Trabaja en Nuestro Equipo</a></li>
-                <li><a href="#">Prensa</a></li>
-                
-            </div>
-            <div class="footer-links">
-                <h4>SIGUENOS</h4>
-                <div class="social-link">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <!-- Modal -->
+    <div class="modal fade" id="zapatillaModal" tabindex="-1" role="dialog" aria-labelledby="zapatillaModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="zapatillaModalLabel">Zapatilla</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="zapatillaDetalle"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="agregarAlCarritoBtn">Agregar al Carrito</button>
                 </div>
             </div>
-            
         </div>
-    
     </div>
-    
-</footer> 
 
-<div>
+    <!-- Carrito Modal -->
+    <div class="modal fade" id="carritoModal" tabindex="-1" role="dialog" aria-labelledby="carritoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="carrito-body"></tbody>
+                    </table>
+                    <h3>Total: $<span id="total-carrito">0</span></h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert -->
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert-carrito" style="display: none;">
+        Añadido al carrito
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <script src="./assent/js/catalogo-hombre.js"></script>
-</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const url = 'https://my.api.mockaroo.com/users.json?key=c1675480';
+            let carrito = [];
+
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const zapatillasContainer = document.getElementById('zapatillas-container');
+                const zapatillasHombre = data.filter(zapatilla => zapatilla.tipo === 'hombre');
+                
+                for (let i = 0; i < zapatillasHombre.length; i += 4) {
+                    const zapatillasGroup = zapatillasHombre.slice(i, i + 4);
+                    const row = document.createElement('div');
+                    row.classList.add('row', 'mt-4');
+
+                    zapatillasGroup.forEach(zapatilla => {
+                        const col = document.createElement('div');
+                        col.classList.add('col-md-3');
+
+                        const card = document.createElement('div');
+                        card.classList.add('card', 'mb-4', 'shadow-sm');
+                        card.setAttribute('data-toggle', 'modal');
+                        card.setAttribute('data-target', '#zapatillaModal');
+                        card.setAttribute('data-zapatilla-id', zapatilla.id);
+
+                        const img = document.createElement('img');
+                        img.classList.add('card-img-top');
+                        img.src = zapatilla.imagen;
+                        img.alt = zapatilla.nombre;
+
+                        const cardBody = document.createElement('div');
+                        cardBody.classList.add('card-body');
+
+                        const cardTitle = document.createElement('h5');
+                        cardTitle.classList.add('card-title');
+                        cardTitle.textContent = zapatilla.nombre;
+
+                        const cardText = document.createElement('p');
+                        cardText.classList.add('card-text');
+                        cardText.innerHTML = `<b><br>Tipo: ${zapatilla.tipo}<br><b>Precio:</b> $${zapatilla.precio}`;
+
+                        cardBody.appendChild(cardTitle);
+                        cardBody.appendChild(cardText);
+
+                        card.appendChild(img);
+                        card.appendChild(cardBody);
+
+                        col.appendChild(card);
+                        row.appendChild(col);
+                    });
+
+                    zapatillasContainer.appendChild(row);
+                }
+
+                document.querySelectorAll('.card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const zapatillaId = card.getAttribute('data-zapatilla-id');
+                        const zapatilla = zapatillasHombre.find(zapatilla => zapatilla.id === parseInt(zapatillaId));
+                        mostrarDetallesZapatilla(zapatilla);
+                    });
+                });
+            })
+            .catch(error => console.log(error));
+
+            function mostrarDetallesZapatilla(zapatilla) {
+                const modalTitle = document.getElementById('zapatillaModalLabel');
+                const modalBody = document.getElementById('zapatillaDetalle');
+                modalTitle.textContent = zapatilla.nombre;
+                modalBody.innerHTML = `
+                    <img src="${zapatilla.imagen}" class="img-fluid mb-2" alt="${zapatilla.nombre}">
+                    <p><b>Descripcion:</b> ${zapatilla.descripcion}</p>
+                    <p>Tipo: ${zapatilla.tipo}</p>
+                    <p>Precio: $${zapatilla.precio}</p>
+                `;
+                const agregarAlCarritoBtn = document.getElementById('agregarAlCarritoBtn');
+                agregarAlCarritoBtn.onclick = () => {
+                    agregarAlCarrito(zapatilla);
+                    $('#zapatillaModal').modal('hide');
+                };
+            }
+
+            function agregarAlCarrito(zapatilla) {
+                const itemExistente = carrito.find(item => item.id === zapatilla.id);
+                if (itemExistente) {
+                    itemExistente.cantidad++;
+                } else {
+                    carrito.push({...zapatilla, cantidad: 1});
+                }
+                mostrarAlerta();
+                actualizarCarrito();
+            }
+
+            function eliminarDelCarrito(id) {
+                carrito = carrito.filter(item => item.id !== id);
+                actualizarCarrito();
+            }
+
+            function cambiarCantidad(id, cantidad) {
+                const item = carrito.find(item => item.id === id);
+                if (item) {
+                    item.cantidad = cantidad;
+                    actualizarCarrito();
+                }
+            }
+
+            function actualizarCarrito() {
+                const carritoBody = document.getElementById('carrito-body');
+                carritoBody.innerHTML = '';
+                let total = 0;
+                
+                carrito.forEach(item => {
+                    const row = document.createElement('tr');
+
+                    const nombre = document.createElement('td');
+                    nombre.textContent = item.nombre;
+
+                    const precio = document.createElement('td');
+                    precio.textContent = item.precio;
+
+                    const cantidad = document.createElement('td');
+                    const inputCantidad = document.createElement('input');
+                    inputCantidad.type = 'number';
+                    inputCantidad.value = item.cantidad;
+                    inputCantidad.min = 1;
+                    inputCantidad.classList.add('form-control');
+                    inputCantidad.addEventListener('change', () => cambiarCantidad(item.id, parseInt(inputCantidad.value)));
+                    cantidad.appendChild(inputCantidad);
+
+                    const subtotal = document.createElement('td');
+                    subtotal.textContent = item.precio * item.cantidad;
+
+                    const acciones = document.createElement('td');
+                    const eliminarBtn = document.createElement('button');
+                    eliminarBtn.classList.add('btn', 'btn-danger');
+                    eliminarBtn.textContent = 'Eliminar';
+                    eliminarBtn.addEventListener('click', () => eliminarDelCarrito(item.id));
+                    acciones.appendChild(eliminarBtn);
+
+                    row.appendChild(nombre);
+                    row.appendChild(precio);
+                    row.appendChild(cantidad);
+                    row.appendChild(subtotal);
+                    row.appendChild(acciones);
+
+                    carritoBody.appendChild(row);
+
+                    total += item.precio * item.cantidad;
+                });
+
+                document.getElementById('total-carrito').textContent = total;
+                document.getElementById('carritoCantidad').textContent = carrito.length;
+            }
+
+            function mostrarAlerta() {
+                const alertCarrito = document.getElementById('alert-carrito');
+                alertCarrito.style.display = 'block';
+                setTimeout(() => {
+                    alertCarrito.style.display = 'none';
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
