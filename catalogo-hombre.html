@@ -20,11 +20,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto"> <!-- Alineación al máximo a la derecha -->
                     <li class="nav-item">
-                        <a class="nav-link active centrar" aria-current="page" href="index.html">INICIO</a>
+                        <a class="nav-link  centrar" aria-current="page" href="index.html">INICIO</a>
                     </li>
             
                     <li class="nav-item">
-                        <a class="nav-link centrar" href="catalogo-hombre.html">HOMBRE</a>
+                        <a class="nav-link centrar active" href="catalogo-hombre.html">HOMBRE</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link centrar" href="catalogo-mujer.html">MUJER</a>
@@ -36,21 +36,17 @@
         </div>
     </nav>
 
-
-
 <div class="barra-negra">
-    <p><div class="barra">
+    <div class="barra">
         <div class="clear">
-          <p><strong>👟 CLICK &amp; COLLECT</strong>! Compra online y <strong>retira en tienda gratis</strong>, desde un día hábil! </p>
+            <p><strong>👟 CLICK &amp; COLLECT</strong>! Compra online y <strong>retira en tienda gratis</strong>, desde un día hábil!</p>
         </div>
-      </div></p>
-
+    </div>
 </div>
-
 
 <body>
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" ></a>
+        <a class="navbar-brand"></a>
         <button class="btn btn-outline-success my-2 my-sm-0" id="carritoIcono" data-toggle="modal" data-target="#carritoModal">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                 <path d="M0 1a1 1 0 0 1 1-1h1.48a1 1 0 0 1 .977.783L3.89 3H14a1 1 0 0 1 .979 1.2l-1.482 7.36a2 2 0 0 1-1.97 1.44H4.361l-.2-1H12.8a1 1 0 0 0 .98-1.2L14.5 4H3.78l-.8 4H1a1 1 0 0 1-1-1V1zM4.334 11l.8-4H13.5l1.1 5.44a1 1 0 0 1-.98 1.2H4.78l-.445-2h-.003zM4 12a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm8-1a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
@@ -59,7 +55,6 @@
         </button>
     </nav>
     
-    
     <div class="container mt-5">
         <div class="row" id="zapatillas-container"></div>
     </div>
@@ -67,6 +62,12 @@
     <div class="modal fade" id="zapatillaModal" tabindex="-1" role="dialog" aria-labelledby="zapatillaModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
+                <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert-carrito" style="display: none;">
+                    Añadido al carrito
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <div class="modal-header">
                     <h5 class="modal-title" id="zapatillaModalLabel">Zapatilla</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -77,52 +78,45 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     <button type="button" class="btn btn-primary" id="agregarAlCarritoBtn">Agregar al Carrito</button>
-                     <!-- Alert -->
-     <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert-carrito" style="display: none;">
-        Añadido al carrito
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Carrito Modal -->
-<div class="modal fade" id="carritoModal" tabindex="-1" role="dialog" aria-labelledby="carritoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>Subtotal</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="carrito-body"></tbody>
-                </table>
-                <h3>Total: $<span id="total-carrito">0</span></h3>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Seguir Comprando</button>
-                <a href="https://tuurldepago.com" class="btn btn-primary">Pagar</a> <!-- Cambia "https://tuurldepago.com" por la URL de tu página de pago -->
+    <div class="modal fade" id="carritoModal" tabindex="-1" role="dialog" aria-labelledby="carritoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="carrito-body"></tbody>
+                    </table>
+                    <h3>Total: $<span id="total-carrito">0</span></h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Seguir Comprando</button>
+                    <a href="./pago.html" class="btn btn-primary">Pagar</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-    <!-- Footer-->
+       <!-- Footer-->
 <footer class="footer">
         
     <div class="conteiner-footer">
@@ -139,7 +133,7 @@
             <div class="footer-links">
                 <h4>CATEGORIAS</h4>
                 <li><a href="catalogo-nino.html">Niño</a></li>
-                <li><a href="catalogo.html">Hombre</a></li>
+                <li><a href="./catalogo-hombre.html">Hombre</a></li>
                 <li><a href="catalogo-mujer.html">Mujer</a></li>
             </div>
           

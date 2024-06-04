@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(response => response.json())
     .then(data => {
         const zapatillasContainer = document.getElementById('zapatillas-container');
-        const zapatillasHombre = data.filter(zapatilla => zapatilla.tipo === 'hombre');
+        const zapatillasHombre = data.filter(zapatilla => zapatilla.tipo === 'niño');
         
         for (let i = 0; i < zapatillasHombre.length; i += 4) {
             const zapatillasGroup = zapatillasHombre.slice(i, i + 4);
